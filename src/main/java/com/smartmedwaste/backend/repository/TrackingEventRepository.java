@@ -1,0 +1,9 @@
+package com.smartmedwaste.backend.repository;
+
+import com.smartmedwaste.backend.entity.TrackingEvent;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface TrackingEventRepository extends JpaRepository<TrackingEvent, Long> {
+    List<TrackingEvent> findByWasteItemIdOrderByTimestampAsc(Long wasteItemId);
+}
